@@ -28,10 +28,10 @@ class PublicCatalogTests(unittest.TestCase):
 
     def test_unique_complete_release_catalog(self):
         operations = self.catalog["operations"]
-        self.assertEqual(len(operations), 547)
-        self.assertEqual(len({op["operationId"] for op in operations}), 547)
-        self.assertEqual(len({(op["method"], op["path"]) for op in operations}), 547)
-        self.assertEqual(len({op["group"] for op in operations}), 40)
+        self.assertEqual(len(operations), 603)
+        self.assertEqual(len({op["operationId"] for op in operations}), 603)
+        self.assertEqual(len({(op["method"], op["path"]) for op in operations}), 603)
+        self.assertEqual(len({op["group"] for op in operations}), 41)
         self.assertEqual(sum(op["cli"]["hidden"] for op in operations), 2)
         for op in operations:
             self.assertEqual(op["sdkMethod"], "client.api." + op["operationId"])
@@ -44,6 +44,15 @@ class PublicCatalogTests(unittest.TestCase):
         self.assertEqual(check["properties"]["kind"]["enum"], ["automation_failures"])
         minutes = check["properties"]["lookbackMinutes"]
         self.assertEqual((minutes["minimum"], minutes["maximum"]), (1, 1440))
+
+    def test_widget_theme_has_visitor_source_switches(self):
+        theme = self.catalog["definitions"]["#/components/schemas/WidgetTheme"]["properties"]
+        for key in ("attribution_enabled", "attribution_consent_required"):
+            self.assertEqual(theme[key]["type"], "boolean")
+        guide = (SKILL / "references/messaging-and-channels.md").read_text()
+        for term in ("attribution_enabled", "attribution_consent_required", "AiWidget.setContext",
+                     "AiWidget.setConsent", "aiWidgetQueue", "metadata.attribution", "data.attribution"):
+            self.assertIn(term, guide)
 
     def test_all_references_resolve_and_detail_is_scoped(self):
         for op in self.catalog["operations"]:

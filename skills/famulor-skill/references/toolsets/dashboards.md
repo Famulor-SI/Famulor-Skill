@@ -2,7 +2,7 @@
 
 Dashboards, analytics, widgets, and layout. Connect only this group with `https://app.famulor.io/mcp?toolsets=dashboards`.
 
-This 2026-11-21 snapshot covers all 19 tools assigned to `dashboards` in the canonical 551-tool registry. The live MCP `tools/list` response is authoritative for arguments, current availability, annotations, and plan or role gating. Never invent fields from this catalog.
+This 2026-11-26 snapshot covers all 19 tools assigned to `dashboards` in the canonical 601-tool registry. The live MCP `tools/list` response is authoritative for arguments, current availability, annotations, and plan or role gating. Never invent fields from this catalog.
 
 Toolsets limit discovery context; they do not grant access. OAuth/API scopes and workspace roles are enforced separately. The Effect column reflects MCP risk annotations: `Delete/destructive` also covers overwrites or changes that can remove data or safeguards.
 
@@ -21,7 +21,7 @@ Toolsets limit discovery context; they do not grant access. OAuth/API scopes and
 | `get_widget_connector` | Read-only | `assistants:read` | Immediate | Fetch a single web widget connector by its ID. |
 | `list_dashboard_widgets` | Read-only | `dashboards:read or calls:read` | Immediate | List a dashboard's widgets, conditions, visualization settings, order, and grid layout. |
 | `list_dashboards` | Read-only | `dashboards:read or calls:read` | Immediate | List the workspace's custom analytics dashboards in display order. |
-| `list_widget_connectors` | Read-only | `assistants:read` | Immediate | List web widget connectors. Optional assistant_id filter. Plan entitlements for the web widget and the AI avatar are included. |
+| `list_widget_connectors` | Read-only | `assistants:read` | Immediate | List web widget connectors. Optional assistant_id filter. Plan entitlements for the web widget, the AI avatar, screen sharing and hiding the "Powered by" line (widget_remove_branding) are included. |
 | `preview_natural_language_dashboard` | Write/action | `dashboards:write or calls:write` | Immediate | Turn a plain-language analytics request into a safe, allow-listed dashboard plan without saving any widgets. |
 | `remove_dashboard_widget` | Delete/destructive | `dashboards:write or calls:write` | Immediate | Detach a widget from one dashboard while retaining the reusable widget record. |
 | `save_natural_language_dashboard` | Write/action | `dashboards:write or calls:write` | Immediate | Validate a previously previewed semantic dashboard plan and add its widgets to the selected dashboard. |

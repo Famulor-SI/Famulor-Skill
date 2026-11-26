@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.8.13 — 2026-11-26
+
+- See which campaign or ad brought a web widget conversation. The skill covers:
+  - the switches **Capture visitor source** (`attribution_enabled`) and **Require consent** (`attribution_consent_required`), both on by default;
+  - which UTM and click-ID parameters are kept, and that pages are stored without a query string;
+  - `AiWidget.setConsent`, `AiWidget.setContext` and the `aiWidgetQueue`;
+  - where the values appear: History, `metadata.attribution`/`metadata.context` in REST and MCP, `data.attribution`/`data.context` in automations, and `attribution`/`context` in call-completed webhooks.
+- The bundled catalogs now include 601 MCP tools and 603 API operations, including the new Playbooks area.
+
 ## 2.8.12 — 2026-11-21
 
 - Create a Milian Mission from the template gallery: list templates through MCP `list_mission_templates`, `GET /mission-templates`, CLI or SDK, ask for each input, fill in the placeholders and create the mission with `create_routine`. Templates that run on events (Beta) are set up in the app. The bundled catalogs now include 551 MCP tools and 547 API operations.

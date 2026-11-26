@@ -1,6 +1,6 @@
 # Bookings API operations
 
-Reviewed 2026-11-21. 15 public operations. [All areas](index.md) · [Execution guide](../api-and-sdk.md)
+Reviewed 2026-11-26. 17 public operations. [All areas](index.md) · [Execution guide](../api-and-sdk.md)
 
 Paths are relative to `https://app.famulor.io/api/v1`. Each operation ID is also the typed SDK method `client.api.<operationId>`. Look up its exact request contract with the bundled `find-operation.py`; CLI help reflects the installed version.
 
@@ -9,6 +9,7 @@ Hidden CLI operations require an interactive/browser flow or `famulor api` where
 | Operation ID / SDK method suffix | HTTP endpoint | CLI command | Purpose |
 | --- | --- | --- | --- |
 | `cancelBooking` | `POST /bookings/{id}/cancel` | `famulor cancel-booking` | [Cancel a booking](https://docs.famulor.io/api-reference/bookings/cancel-a-booking) |
+| `confirmBooking` | `POST /bookings/{id}/confirm` | `famulor confirm-booking` | [Confirm a booking request](https://docs.famulor.io/api-reference/introduction) |
 | `createBooking` | `POST /bookings` | `famulor create-booking` | [Create a booking](https://docs.famulor.io/api-reference/bookings/create-a-booking) |
 | `createBookingEventType` | `POST /booking-event-types` | `famulor create-booking-event-type` | [Create a booking event type](https://docs.famulor.io/api-reference/bookings/create-a-booking-event-type) |
 | `deleteBookingEventType` | `DELETE /booking-event-types/{id}` | `famulor delete-booking-event-type` | [Delete a booking event type](https://docs.famulor.io/api-reference/bookings/delete-a-booking-event-type) |
@@ -21,5 +22,6 @@ Hidden CLI operations require an interactive/browser flow or `famulor api` where
 | `listBookingSlots` | `GET /booking-event-types/{id}/slots` | `famulor list-booking-slots` | [List free slots](https://docs.famulor.io/api-reference/bookings/list-free-slots) |
 | `listBookings` | `GET /bookings` | `famulor list-bookings` | [List bookings](https://docs.famulor.io/api-reference/bookings/list-bookings) |
 | `lookupBookings` | `POST /bookings/lookup` | `famulor lookup-bookings` | [Look up upcoming bookings](https://docs.famulor.io/api-reference/bookings/look-up-upcoming-bookings) |
+| `rejectBooking` | `POST /bookings/{id}/reject` | `famulor reject-booking` | [Decline a booking request](https://docs.famulor.io/api-reference/introduction) |
 | `rescheduleBooking` | `POST /bookings/{id}/reschedule` | `famulor reschedule-booking` | [Reschedule a booking](https://docs.famulor.io/api-reference/bookings/reschedule-a-booking) |
 | `updateBookingEventType` | `PATCH /booking-event-types/{id}` | `famulor update-booking-event-type` | [Update a booking event type](https://docs.famulor.io/api-reference/bookings/update-a-booking-event-type) |

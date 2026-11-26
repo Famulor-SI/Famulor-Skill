@@ -4,7 +4,7 @@ description: Design, configure, test and improve Famulor voice, WhatsApp, webcha
 license: MIT
 metadata:
   author: Famulor
-  version: "2.8.12"
+  version: "2.8.13"
   homepage: https://github.com/Famulor-SI/Famulor-Skill
 ---
 
@@ -47,22 +47,22 @@ https://app.famulor.io/mcp?toolsets=assistants,calls
 
 | Toolset | Use for | Tools | Reference |
 | --- | --- | ---: | --- |
-| `assistants` | Assistants, prompts, models, voices, tools, bookings and tests | 131 | [Assistants](references/toolsets/assistants.md) |
-| `calls` | Unified history, transcripts, quality review and permitted call control | 34 | [Calls](references/toolsets/calls.md) |
+| `assistants` | Assistants, prompts, models, voices, tools, bookings and tests | 136 | [Assistants](references/toolsets/assistants.md) |
+| `calls` | Unified history, transcripts, quality review and permitted call control | 55 | [Calls](references/toolsets/calls.md) |
 | `campaigns` | Campaigns, audience, leads, consent and suppression | 43 | [Campaigns](references/toolsets/campaigns.md) |
 | `messaging` | WhatsApp, social channels, email, templates and conversations | 57 | [Messaging](references/toolsets/messaging.md) |
 | `telephony` | Numbers, own carriers, routing and team calling | 74 | [Telephony](references/toolsets/telephony.md) |
 | `knowledge` | Documents, FAQs, websites and connected knowledge sources | 28 | [Knowledge](references/toolsets/knowledge.md) |
 | `dashboards` | Analytics and dashboard widgets | 19 | [Dashboards](references/toolsets/dashboards.md) |
-| `automations` | Workflows, connections, CRM sync, Missions and run history | 68 | [Automations](references/toolsets/automations.md) |
+| `automations` | Workflows, connections, CRM sync, Missions and run history | 86 | [Automations](references/toolsets/automations.md) |
 | `billing` | Balance, usage, invoices and billing recovery | 23 | [Billing](references/toolsets/billing.md) |
-| `settings` | Workspaces, preferences, retention, domains and credentials | 47 | [Settings](references/toolsets/settings.md) |
+| `settings` | Workspaces, preferences, retention, domains and credentials | 53 | [Settings](references/toolsets/settings.md) |
 | `platform` | Authorized reseller customer management | 19 | [Reseller management](references/toolsets/platform.md) |
 | `migration` | Preview and import supported legacy resources | 2 | [Migration](references/toolsets/migration.md) |
 | `tasks` | Durable exports, crawls, simulations and preparation | 4 | [Tasks](references/toolsets/tasks.md) |
 | `milian` | Workspace questions and voice sessions using additional credits | 2 | [Milian](references/toolsets/milian.md) |
 
-The dated snapshot contains **551 tools** across 14 groups. `list_mcp_toolsets` reports groups visible to a custom connection. The public `assistant-history` profile intentionally provides only 11 read tools. Installing a skill cannot expand that connection's permissions. Model-catalog visibility may require AI Safety & Control; use available defaults rather than trying to bypass a denial.
+The dated snapshot contains **601 tools** across 14 groups. `list_mcp_toolsets` reports groups visible to a custom connection. The public `assistant-history` profile intentionally provides only 11 read tools. Installing a skill cannot expand that connection's permissions. Model-catalog visibility may require AI Safety & Control; use available defaults rather than trying to bypass a denial.
 
 ### Twilio regional number import
 
