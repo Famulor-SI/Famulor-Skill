@@ -1,6 +1,6 @@
 # Public API operation index
 
-Reviewed 2026-11-21: **547 operations across 40 areas**. Every operation is cross-checked against the generated CLI catalog and TypeScript SDK descriptors.
+Reviewed 2026-11-26: **603 operations across 41 areas**. Every operation is cross-checked against the generated CLI catalog and TypeScript SDK descriptors.
 
 Use this index to find the right endpoint. Open only the relevant area; use [API, CLI and SDK guidance](../api-and-sdk.md) for authentication, execution and verification. Public reseller operations remain subject to the authenticated workspace's entitlement and permissions.
 
@@ -19,11 +19,11 @@ The full API uses `https://app.famulor.io/api/v1` plus the relative paths shown 
 | --- | ---: | --- |
 | API Keys | 4 | [API Keys](api-keys.md) |
 | Account | 4 | [Account](account.md) |
-| Assistants | 22 | [Assistants](assistants.md) |
+| Assistants | 25 | [Assistants](assistants.md) |
 | Automations | 44 | [Automations](automations.md) |
 | Avatars | 7 | [Avatars](avatars.md) |
 | Billing | 16 | [Billing](billing.md) |
-| Bookings | 15 | [Bookings](bookings.md) |
+| Bookings | 17 | [Bookings](bookings.md) |
 | Callbacks | 2 | [Callbacks](callbacks.md) |
 | Caller IDs | 4 | [Caller IDs](caller-ids.md) |
 | Calls | 13 | [Calls](calls.md) |
@@ -32,15 +32,16 @@ The full API uses `https://app.famulor.io/api/v1` plus the relative paths shown 
 | Catalog | 3 | [Catalog](catalog.md) |
 | Dashboards | 12 | [Dashboards](dashboards.md) |
 | Famulor Loop | 38 | [Famulor Loop](famulor-loop.md) |
-| History | 13 | [History](history.md) |
+| History | 40 | [History](history.md) |
 | Integrations | 20 | [Integrations](integrations.md) |
 | Knowledge Bases | 31 | [Knowledge Bases](knowledge-bases.md) |
 | Leads | 17 | [Leads](leads.md) |
 | Messaging | 36 | [Messaging](messaging.md) |
 | Migrations | 2 | [Migrations](migrations.md) |
 | Milian | 2 | [Milian](milian.md) |
-| Milian Missions | 15 | [Milian Missions](milian-missions.md) |
+| Milian Missions | 26 | [Milian Missions](milian-missions.md) |
 | Phone Numbers | 16 | [Phone Numbers](phone-numbers.md) |
+| Playbooks | 7 | [Playbooks](playbooks.md) |
 | QA | 3 | [QA](qa.md) |
 | SIP Trunks | 5 | [SIP Trunks](sip-trunks.md) |
 | SMS | 10 | [SMS](sms.md) |
@@ -56,4 +57,4 @@ The full API uses `https://app.famulor.io/api/v1` plus the relative paths shown 
 | Webhook Subscriptions | 4 | [Webhook Subscriptions](webhook-subscriptions.md) |
 | White Label | 29 | [White Label](white-label.md) |
 | Widgets | 7 | [Widgets](widgets.md) |
-| Workspaces | 8 | [Workspaces](workspaces.md) |
+| Workspaces | 14 | [Workspaces](workspaces.md) |

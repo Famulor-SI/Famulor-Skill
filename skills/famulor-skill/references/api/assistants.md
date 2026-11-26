@@ -1,6 +1,6 @@
 # Assistants API operations
 
-Reviewed 2026-11-21. 22 public operations. [All areas](index.md) · [Execution guide](../api-and-sdk.md)
+Reviewed 2026-11-26. 25 public operations. [All areas](index.md) · [Execution guide](../api-and-sdk.md)
 
 Paths are relative to `https://app.famulor.io/api/v1`. Each operation ID is also the typed SDK method `client.api.<operationId>`. Look up its exact request contract with the bundled `find-operation.py`; CLI help reflects the installed version.
 
@@ -9,13 +9,16 @@ Hidden CLI operations require an interactive/browser flow or `famulor api` where
 | Operation ID / SDK method suffix | HTTP endpoint | CLI command | Purpose |
 | --- | --- | --- | --- |
 | `createAssistant` | `POST /assistants` | `famulor create-assistant` | [Create an assistant](https://docs.famulor.io/api-reference/assistants/create-an-assistant) |
+| `createAssistantDemoLink` | `POST /assistants/{id}/demo-link` | `famulor create-assistant-demo-link` | [Create assistant demo link](https://docs.famulor.io/api-reference/assistants/create-assistant-demo-link) |
 | `deleteAssistant` | `DELETE /assistants/{id}` | `famulor delete-assistant` | [Delete an assistant](https://docs.famulor.io/api-reference/assistants/delete-an-assistant) |
 | `deleteAssistantAvatar` | `DELETE /assistants/{id}/avatar` | `famulor delete-assistant-avatar` | [Remove assistant picture](https://docs.famulor.io/api-reference/assistants/remove-assistant-picture) |
 | `deleteAssistantGreetingAudio` | `DELETE /assistants/{id}/greeting-audio` | `famulor delete-assistant-greeting-audio` | [Remove audio first message](https://docs.famulor.io/api-reference/assistants/remove-audio-first-message) |
+| `disableAssistantDemoLink` | `DELETE /assistants/{id}/demo-link` | `famulor disable-assistant-demo-link` | [Disable assistant demo link](https://docs.famulor.io/api-reference/assistants/disable-assistant-demo-link) |
 | `getAssistant` | `GET /assistants/{id}` | `famulor get-assistant` | [Get an assistant](https://docs.famulor.io/api-reference/assistants/get-an-assistant) |
 | `getAssistantAnnouncementAudio` | `GET /assistants/{id}/announcements/{assetId}/audio` | `famulor get-assistant-announcement-audio` | [Play saved announcement audio](https://docs.famulor.io/api-reference/assistants/play-saved-announcement-audio) |
 | `getAssistantAnnouncements` | `GET /assistants/{id}/announcements` | `famulor get-assistant-announcements` | [Get saved announcement audio](https://docs.famulor.io/api-reference/assistants/get-saved-announcement-audio) |
 | `getAssistantComplianceReview` | `GET /assistants/{id}/compliance-review` | `famulor get-assistant-compliance-review` | [Get assistant compliance review](https://docs.famulor.io/api-reference/assistants/get-assistant-compliance-review) |
+| `getAssistantDemoLink` | `GET /assistants/{id}/demo-link` | `famulor get-assistant-demo-link` | [Get assistant demo link status](https://docs.famulor.io/api-reference/assistants/get-assistant-demo-link-status) |
 | `getAssistantFallbackVoices` | `GET /assistants/{id}/fallback-voices` | `famulor get-assistant-fallback-voices` | [Get assistant backup voices](https://docs.famulor.io/api-reference/assistants/get-assistant-backup-voices) |
 | `getAssistantVariables` | `GET /assistants/{id}/variables` | `famulor get-assistant-variables` | [Get assistant variables](https://docs.famulor.io/api-reference/assistants/get-assistant-variables) |
 | `listAssistantAvatarGallery` | `GET /assistants/avatar-gallery` | `famulor list-assistant-avatar-gallery` | [List assistant picture gallery](https://docs.famulor.io/api-reference/introduction) |

@@ -1,6 +1,6 @@
 # Workspaces API operations
 
-Reviewed 2026-11-21. 8 public operations. [All areas](index.md) · [Execution guide](../api-and-sdk.md)
+Reviewed 2026-11-26. 14 public operations. [All areas](index.md) · [Execution guide](../api-and-sdk.md)
 
 Paths are relative to `https://app.famulor.io/api/v1`. Each operation ID is also the typed SDK method `client.api.<operationId>`. Look up its exact request contract with the bundled `find-operation.py`; CLI help reflects the installed version.
 
@@ -10,9 +10,15 @@ Hidden CLI operations require an interactive/browser flow or `famulor api` where
 | --- | --- | --- | --- |
 | `createWorkspace` | `POST /workspaces` | `famulor create-workspace` | [Create a workspace](https://docs.famulor.io/api-reference/workspaces/create-a-workspace) |
 | `createWorkspaceApiKey` | `POST /workspaces/{workspace_id}/api-keys` | `famulor create-workspace-api-key` | [Create an API key for a workspace](https://docs.famulor.io/api-reference/workspaces/create-an-api-key-for-a-workspace) |
+| `createWorkspaceGroup` | `POST /workspace-groups` | `famulor create-workspace-group` | [Create a workspace group](https://docs.famulor.io/api-reference/workspaces/create-a-workspace-group) |
+| `deleteWorkspaceGroup` | `DELETE /workspace-groups/{id}` | `famulor delete-workspace-group` | [Delete a workspace group](https://docs.famulor.io/api-reference/workspaces/delete-a-workspace-group) |
+| `getTeamMemberTriageAccess` | `GET /team-members/{id}/triage-access` | `famulor get-team-member-triage-access` | [Get groups and visible categories of a member](https://docs.famulor.io/api-reference/workspaces/get-groups-and-visible-categories-of-a-member) |
 | `inviteTeamMember` | `POST /team-members` | `famulor invite-team-member` | [Invite team member](https://docs.famulor.io/api-reference/workspaces/invite-team-member) |
 | `listTeamMembers` | `GET /team-members` | `famulor list-team-members` | [List team members](https://docs.famulor.io/api-reference/workspaces/list-team-members) |
+| `listWorkspaceGroups` | `GET /workspace-groups` | `famulor list-workspace-groups` | [List workspace groups](https://docs.famulor.io/api-reference/workspaces/list-workspace-groups) |
 | `listWorkspaces` | `GET /workspaces` | `famulor list-workspaces` | [List workspaces](https://docs.famulor.io/api-reference/workspaces/list-workspaces) |
 | `removeTeamMember` | `DELETE /team-members/{id}` | `famulor remove-team-member` | [Remove team member](https://docs.famulor.io/api-reference/workspaces/remove-team-member) |
+| `setTeamMemberTriageAccess` | `PUT /team-members/{id}/triage-access` | `famulor set-team-member-triage-access` | [Set groups and visible categories of a member](https://docs.famulor.io/api-reference/workspaces/set-groups-and-visible-categories-of-a-member) |
 | `transferWorkspaceOwnership` | `POST /workspace/transfer-ownership` | `famulor transfer-workspace-ownership` | [Transfer workspace ownership](https://docs.famulor.io/api-reference/workspaces/transfer-workspace-ownership) |
 | `updateTeamMemberRole` | `PATCH /team-members/{id}` | `famulor update-team-member-role` | [Change team member role](https://docs.famulor.io/api-reference/workspaces/change-team-member-role) |
+| `updateWorkspaceGroup` | `PATCH /workspace-groups/{id}` | `famulor update-workspace-group` | [Update a workspace group](https://docs.famulor.io/api-reference/workspaces/update-a-workspace-group) |
