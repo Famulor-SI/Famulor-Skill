@@ -63,6 +63,20 @@ class PublicCatalogTests(unittest.TestCase):
                      "color_scheme", "text_overrides", "terms_enabled", "terms_accepted", "powered_by_hidden"):
             self.assertIn(term, guide)
 
+    def test_channel_send_builtins_keep_destination_in_configuration(self):
+        tool = self.catalog["definitions"]["#/components/schemas/BuiltinTool"]["properties"]
+        self.assertLess(tool["type"]["enum"].index("send_email"), tool["type"]["enum"].index("send_whatsapp_template"))
+        self.assertIn("notify_team", tool["type"]["enum"])
+        for field in ("whatsapp_connector_id", "whatsapp_template_id", "notify_connector_id"):
+            self.assertEqual(tool[field]["format"], "uuid", field)
+        self.assertEqual(tool["whatsapp_to_mode"]["enum"], ["caller", "custom"])
+        for field in ("whatsapp_template_name", "whatsapp_template_language",
+                      "whatsapp_template_category", "whatsapp_template_variables"):
+            self.assertTrue(tool[field]["readOnly"], field)
+        self.assertEqual(tool["notify_channel_label"]["maxLength"], 120)
+        self.assertEqual(tool["notify_include_contact"]["type"], "boolean")
+        self.assertEqual(tool["notify_include_history_link"]["type"], "boolean")
+
     def test_all_references_resolve_and_detail_is_scoped(self):
         for op in self.catalog["operations"]:
             detail = lookup.operation_contract(self.catalog, op)

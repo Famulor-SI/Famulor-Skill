@@ -21,6 +21,7 @@ Turn the user's business outcome into a channel-appropriate assistant or a verif
 | Phone reception, appointment booking, opted-in outbound qualification, GPT-Live Full Duplex | [Voice prompting](references/voice-prompting.md) |
 | Outreach campaigns: templates, call sequences, launch confirmation, local presence, analytics | [Campaigns and sequences](references/campaigns.md) |
 | WhatsApp, SMS with optional RCS, website text chat, social messaging or email | [Messaging and channels](references/messaging-and-channels.md) |
+| Sending an approved WhatsApp template or notifying the team in Slack or Discord during a conversation | [WhatsApp template and team notification tools](references/messaging-and-channels.md#whatsapp-template-and-team-notification-tools) |
 | Tests, simulations, regression cases or call-quality review | [Testing and evaluation](references/testing-and-evaluation.md) |
 | REST endpoint, CLI command, TypeScript method or integration code | [API and SDK](references/api-and-sdk.md) and [operation index](references/api/index.md) |
 | A ready-made Milian Mission from the template gallery | [Mission templates](references/api-and-sdk.md#milian-mission-templates) |

@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "reviewedAt": "2026-11-26",
+  "reviewedAt": "2026-11-27",
   "source": "Famulor public OpenAPI, CLI command catalog and TypeScript SDK operation descriptors",
-  "openapiSha256": "3a3b4a44f2682b6e4e1f8c3f538952c4c151b89fd42a67fc6d6951ec716bdd5f",
+  "openapiSha256": "9b1f3ba0c04d670f28e2f3c4fe59015180036b9a4e21c2449929b3c697f345a9",
   "baseUrl": "https://app.famulor.io/api/v1",
   "notice": "Dated navigation and request-shape snapshot, not a runtime validator. Check the live public schema and installed client before execution. Descriptions, examples, default values and response properties are intentionally omitted.",
   "operations": [
@@ -5567,6 +5567,12 @@
             "type": "string"
           },
           {
+            "name": "wait_for_capacity",
+            "flag": "--wait-for-capacity",
+            "required": false,
+            "type": "boolean"
+          },
+          {
             "name": "variables",
             "flag": "--variables",
             "required": false,
@@ -5586,6 +5592,9 @@
       },
       "responses": {
         "201": [
+          "application/json"
+        ],
+        "202": [
           "application/json"
         ],
         "400": [
@@ -55082,6 +55091,23 @@
           ],
           "type": "string"
         },
+        "notify_channel_id": {
+          "type": "string"
+        },
+        "notify_channel_label": {
+          "maxLength": 120,
+          "type": "string"
+        },
+        "notify_connector_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "notify_include_contact": {
+          "type": "boolean"
+        },
+        "notify_include_history_link": {
+          "type": "boolean"
+        },
         "post_answer_dtmf": {
           "maxLength": 32,
           "pattern": "^[0-9*#A-Da-dWw]*$",
@@ -55175,6 +55201,8 @@
             "assistant_transfer",
             "send_sms",
             "send_email",
+            "send_whatsapp_template",
+            "notify_team",
             "check_business_hours",
             "schedule_callback",
             "collect_payment_card",
@@ -55185,6 +55213,43 @@
         },
         "wait_message": {
           "maxLength": 500,
+          "type": "string"
+        },
+        "whatsapp_connector_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "whatsapp_custom_number": {
+          "type": "string"
+        },
+        "whatsapp_template_category": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "whatsapp_template_id": {
+          "format": "uuid",
+          "type": "string"
+        },
+        "whatsapp_template_language": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "whatsapp_template_name": {
+          "readOnly": true,
+          "type": "string"
+        },
+        "whatsapp_template_variables": {
+          "readOnly": true,
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "whatsapp_to_mode": {
+          "enum": [
+            "caller",
+            "custom"
+          ],
           "type": "string"
         }
       },
@@ -60159,6 +60224,9 @@
         },
         "variables": {
           "$ref": "#/components/schemas/CallInputVariables"
+        },
+        "wait_for_capacity": {
+          "type": "boolean"
         }
       }
     },
