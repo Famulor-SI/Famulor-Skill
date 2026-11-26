@@ -45,13 +45,22 @@ class PublicCatalogTests(unittest.TestCase):
         minutes = check["properties"]["lookbackMinutes"]
         self.assertEqual((minutes["minimum"], minutes["maximum"]), (1, 1440))
 
-    def test_widget_theme_has_visitor_source_switches(self):
+    def test_widget_settings_are_in_catalog_and_guide(self):
         theme = self.catalog["definitions"]["#/components/schemas/WidgetTheme"]["properties"]
-        for key in ("attribution_enabled", "attribution_consent_required"):
+        for key in ("attribution_enabled", "attribution_consent_required", "terms_enabled", "powered_by_hidden"):
             self.assertEqual(theme[key]["type"], "boolean")
+        self.assertEqual(theme["color_scheme"]["enum"], ["light", "dark", "auto"])
+        self.assertIn("text_overrides", theme)
+        update = next(op for op in self.catalog["operations"] if op["operationId"] == "updateWidgetConnector")
+        fields = {field["name"] for field in update["cli"]["bodyFields"]}
+        self.assertTrue({"allow_all_origins", "origin_include_www", "origin_allow_http"} <= fields)
+        cards = self.catalog["definitions"]["#/components/schemas/InteractiveResponses"]["properties"]["cards"]
+        self.assertEqual(cards["required"], ["enabled"])
         guide = (SKILL / "references/messaging-and-channels.md").read_text()
         for term in ("attribution_enabled", "attribution_consent_required", "AiWidget.setContext",
-                     "AiWidget.setConsent", "aiWidgetQueue", "metadata.attribution", "data.attribution"):
+                     "AiWidget.setConsent", "aiWidgetQueue", "metadata.attribution", "data.attribution",
+                     "interactive_responses", "allow_all_origins", "origin_include_www", "origin_allow_http",
+                     "color_scheme", "text_overrides", "terms_enabled", "terms_accepted", "powered_by_hidden"):
             self.assertIn(term, guide)
 
     def test_all_references_resolve_and_detail_is_scoped(self):

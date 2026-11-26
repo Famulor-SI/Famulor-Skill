@@ -4,7 +4,7 @@ For a website assistant that answers questions and optionally qualifies a reques
 
 ## Configure first
 
-Assign the assistant to a widget, enable Text chat, and allow the intended website. Configure visible greeting copy, pre-chat fields, uploads, and visitor verification in the widget editor. Keep the first visible greeting brief, for example: “Welcome to [BUSINESS]. What can I help you with?” Check the visitor-source switches. If the assistant needs values from the site, such as a customer number, pass them with `AiWidget.setContext` and refer to them as variables ([visitor source and context](../../references/messaging-and-channels.md#visitor-source-and-context)).
+Assign the assistant to a widget, enable Text chat, and allow the intended website. Configure visible greeting copy, pre-chat fields, uploads, and visitor verification in the widget editor. Keep the first visible greeting brief, for example: “Welcome to [BUSINESS]. What can I help you with?” Check allowed domains, terms of use and the visitor-source switches. Turn on Cards only when a tool, such as a product search, returns real image and page URLs. If the assistant needs values from the site, such as a customer number, pass them with `AiWidget.setContext` and refer to them as variables ([visitor source and context](../../references/messaging-and-channels.md#visitor-source-and-context)).
 
 Attach the approved knowledge base and only the tools needed for the workflow. If offering appointments, configure the real calendar, timezone, and required customer fields. A “Book now” phrase in a prompt is not a working booking integration.
 

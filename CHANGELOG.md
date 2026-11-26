@@ -7,6 +7,13 @@
   - which UTM and click-ID parameters are kept, and that pages are stored without a query string;
   - `AiWidget.setConsent`, `AiWidget.setContext` and the `aiWidgetQueue`;
   - where the values appear: History, `metadata.attribution`/`metadata.context` in REST and MCP, `data.attribution`/`data.context` in automations, and `attribution`/`context` in call-completed webhooks.
+- Guide agents through the other new web widget settings:
+  - **Cards** (`interactive_responses.cards`) in the widget, Test Chat and messaging apps, with the limits for each channel;
+  - allowed domains with **Allow all domains**, **Include www variants** and **Allow http**;
+  - **Light/Dark/Auto** style, own colours and radius;
+  - texts per language (`text_overrides`);
+  - terms of use before a call or chat;
+  - hiding the **“Powered by”** line.
 - The bundled catalogs now include 601 MCP tools and 603 API operations, including the new Playbooks area.
 
 ## 2.8.12 — 2026-11-21
