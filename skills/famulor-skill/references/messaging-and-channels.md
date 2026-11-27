@@ -121,6 +121,8 @@ Use it for a fixed, approved message, for example an appointment confirmation af
 
 The template text is fixed. The assistant only fills the variables listed in `whatsapp_template_variables`, and values already known from the call or chat win over what the model writes. Describe the trigger and the customer's agreement in the tool description, not the wording.
 
+Write each value the way it should appear in a written message: digits for dates, times and numbers, codes exactly as given. WhatsApp rejects spelled-out values, and on a call the transcript holds the words as spoken, so the assistant converts them before it fills the template.
+
 On a WhatsApp or SMS chat the template always goes to the chat's own number. In other chats and on web calls, the assistant sends only to a number the customer wrote or confirmed. Opted-out contacts and quiet hours block the send. Each message uses messaging credits like any WhatsApp template, and replies arrive in that sender's WhatsApp channel. Get the template approved under **Settings → Channels → WhatsApp** before saving the tool. A successful result means WhatsApp accepted the message; use [delivery status](#message-delivery-status) before reporting that it arrived.
 
 ### Notify team
@@ -129,13 +131,13 @@ Use it when the team should hear about a conversation while it is still going on
 
 | Field | Value |
 | --- | --- |
-| `notify_connector_id` | Required. An active Slack or Discord connection of the workspace (`list_messaging_connectors`, platform `slack` or `discord`). Teams, Google Chat and other platforms are rejected |
-| `notify_channel_id` | Required. A channel of that connection: a Slack channel ID such as `C0123ABCDEF` or a Discord channel ID. No public operation lists a connection's channels, so pick the channel in the dashboard or ask the user for its ID |
+| `notify_connector_id` | Required. An active Slack, Discord, Microsoft Teams or Google Chat connection of the workspace (`list_messaging_connectors`, platform `slack`, `discord`, `teams` or `gchat`). Other platforms are rejected |
+| `notify_channel_id` | Required. A channel of that connection: a Slack channel ID such as `C0123ABCDEF`, a Discord channel ID, a Microsoft Teams channel ID such as `19:…@thread.tacv2` (a Teams channel link is accepted too), or a Google Chat space such as `spaces/AAAA…`. The Teams app must be installed in that team, and the Google Chat app must be a member of the space. No public operation lists a connection's channels, so pick the channel in the dashboard or ask the user for its ID |
 | `notify_channel_label` | Optional display name for the tool list, up to 120 characters. It never addresses anything |
 | `notify_include_contact` | Default `true`: adds the contact's number and name. A number the channel could not verify is marked as not verified |
 | `notify_include_history_link` | Default `true`: adds a link to the workspace's History |
 
-The assistant writes one short note and never chooses the channel. The team sees the note with the assistant's name and, when enabled, the contact and the History link. `@channel`, `@here`, `@everyone` and person or role mentions are never sent, so a prompt cannot page the whole team. At most three notes go out per call or message turn. Each note is billed like one sent message; quiet hours do not hold it back, because it goes to the workspace's own team. Slack or Discord must be connected and included in the plan.
+The assistant writes one short note and never chooses the channel. The team sees the note with the assistant's name and, when enabled, the contact and the History link. `@channel`, `@here`, `@everyone` and person or role mentions are never sent, so a prompt cannot page the whole team. At most three notes go out per call or message turn. Each note is billed like one sent message; quiet hours do not hold it back, because it goes to the workspace's own team. Slack, Discord, Microsoft Teams or Google Chat must be connected and included in the plan.
 
 A note informs the team; it is not a handoff. It does not pause the AI, transfer the call or assign the conversation. Pair it with a real transfer, callback or human-takeover path when the customer needs a person, and do not promise that someone will get back to them unless that action exists.
 
@@ -369,7 +371,7 @@ Use synthetic customer data and an explicitly authorized test recipient or owned
 | Human takes over while a reply is being prepared | AI remains paused; no conflicting automatic reply. |
 | WhatsApp window closed | Free-form send blocked; approved template route used only if authorized. |
 | Customer agrees to a WhatsApp confirmation | One template send to the chat's number or a number the customer wrote or confirmed; blocked for an opted-out contact or during quiet hours; arrival reported only from a delivery receipt. |
-| Urgent request with a Notify team tool | One note in the configured Slack or Discord channel, without mentions; no promised callback or human takeover unless that action is configured. |
+| Urgent request with a Notify team tool | One note in the configured channel, without mentions; no promised callback or human takeover unless that action is configured. |
 | Mailbox Draft mode | Draft visible, not reported as delivered. |
 | Native email | Body-only reply, correct thread, no duplicated signature or subject. |
 | Website pre-chat and upload | Actual supplied values/content used, no claim of invisible page access. |

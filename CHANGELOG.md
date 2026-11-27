@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.8.14 — 2026-11-27
+
+- Configure the **Send WhatsApp template** and **Notify team** assistant tools. A template goes to the caller or one number, as approved; a short note goes to a Slack, Discord, Microsoft Teams or Google Chat channel, without mentions. The skill covers the fields, examples and checks.
+- Write WhatsApp template values as they appear in a message: digits for dates and times, codes exactly as given.
+- Regenerate the bundled catalogs from app main `d57773cfa`: 601 MCP tools, 603 API operations in 41 areas.
+
 ## 2.8.13 — 2026-11-26
 
 - See which campaign or ad brought a web widget conversation. The skill covers:
