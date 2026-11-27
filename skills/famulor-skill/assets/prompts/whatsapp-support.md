@@ -7,7 +7,7 @@ An adaptable starting point for inbound customer support. Replace bracketed setu
 - Assign the intended assistant to the WhatsApp sender and verify its connection and AI Auto-Responses.
 - Attach approved knowledge and an order/case lookup if account-specific answers are needed.
 - Decide which escalation action really exists: a configured case-creation tool, an authorized callback, or contact instructions. Prompt text alone cannot pause AI or transfer a chat to a person.
-- A **Notify team** tool can tell your team in Slack or Discord that a conversation needs attention. It informs; it does not pause the AI or hand over the chat, so pair it with one of the actions above. See [team notification tools](../../references/messaging-and-channels.md#notify-team).
+- A **Notify team** tool can tell your team in Slack, Discord, Microsoft Teams or Google Chat that a conversation needs attention. It informs; it does not pause the AI or hand over the chat, so pair it with one of the actions above. See [team notification tools](../../references/messaging-and-channels.md#notify-team).
 - Check consent, the service window, and template sendability before any outbound test. An inbound-support prompt does not authorize an outreach campaign.
 
 ## Verify outgoing delivery

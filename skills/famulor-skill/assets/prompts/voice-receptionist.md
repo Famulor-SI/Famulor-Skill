@@ -2,7 +2,7 @@
 
 Adapt this for a One Prompt assistant. Replace bracketed labels with verified business facts or the exact assigned tool names, then remove the setup notes. Use a separate greeting, for example: “Hello, you've reached [business]. I'm [name], the AI assistant. How can I help?” Configure any required consent separately.
 
-Before saving, attach the approved knowledge sources, choose the human fallback, and test the actual transfer or callback path. Remove actions that are not configured. To alert the team about an urgent caller in Slack or Discord while the call continues, add a [Notify team](../../references/messaging-and-channels.md#notify-team) tool and name it in the escalation step; it does not replace the transfer or callback.
+Before saving, attach the approved knowledge sources, choose the human fallback, and test the actual transfer or callback path. Remove actions that are not configured. To alert the team about an urgent caller in Slack, Discord, Microsoft Teams or Google Chat while the call continues, add a [Notify team](../../references/messaging-and-channels.md#notify-team) tool and name it in the escalation step; it does not replace the transfer or callback.
 
 ## System prompt template
 

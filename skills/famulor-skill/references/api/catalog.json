@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "reviewedAt": "2026-11-27",
   "source": "Famulor public OpenAPI, CLI command catalog and TypeScript SDK operation descriptors",
-  "openapiSha256": "9b1f3ba0c04d670f28e2f3c4fe59015180036b9a4e21c2449929b3c697f345a9",
+  "openapiSha256": "0d030b5d86fd8964036974fa505b3e855c810d0777a45589ebc2b2097bb1999b",
   "baseUrl": "https://app.famulor.io/api/v1",
   "notice": "Dated navigation and request-shape snapshot, not a runtime validator. Check the live public schema and installed client before execution. Descriptions, examples, default values and response properties are intentionally omitted.",
   "operations": [
@@ -3587,6 +3587,13 @@
             "flag": "--inbound-ringing-timeout-sec",
             "required": false,
             "type": "integer"
+          },
+          {
+            "name": "busy_forward",
+            "flag": "--busy-forward",
+            "required": false,
+            "type": "object",
+            "nullable": true
           },
           {
             "name": "outbound_ringing_timeout_sec",
@@ -36531,6 +36538,13 @@
             "type": "integer"
           },
           {
+            "name": "busy_forward",
+            "flag": "--busy-forward",
+            "required": false,
+            "type": "object",
+            "nullable": true
+          },
+          {
             "name": "outbound_ringing_timeout_sec",
             "flag": "--outbound-ringing-timeout-sec",
             "required": false,
@@ -44051,6 +44065,13 @@
             "flag": "--inbound-ringing-timeout-sec",
             "required": false,
             "type": "integer"
+          },
+          {
+            "name": "busy_forward",
+            "flag": "--busy-forward",
+            "required": false,
+            "type": "object",
+            "nullable": true
           },
           {
             "name": "outbound_ringing_timeout_sec",
@@ -53250,6 +53271,45 @@
             "$ref": "#/components/schemas/BuiltinTool"
           }
         },
+        "busy_forward": {
+          "required": [
+            "enabled"
+          ],
+          "type": [
+            "object",
+            "null"
+          ],
+          "properties": {
+            "after_hours_destination": {
+              "pattern": "^\\+[1-9][0-9]{6,14}$",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "destination": {
+              "pattern": "^\\+[1-9][0-9]{6,14}$",
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "enabled": {
+              "type": "boolean"
+            },
+            "timing": {
+              "enum": [
+                "after_ringing",
+                "immediately"
+              ],
+              "type": "string"
+            },
+            "use_business_hours": {
+              "type": "boolean"
+            }
+          },
+          "additionalProperties": false
+        },
         "card_collect_enabled": {
           "type": "boolean"
         },
@@ -54959,6 +55019,32 @@
           "maxLength": 4000,
           "type": "string"
         },
+        "callback_custom_number": {
+          "type": "string"
+        },
+        "callback_max_attempts": {
+          "maximum": 5,
+          "minimum": 1,
+          "type": "integer"
+        },
+        "callback_retry_delay_minutes": {
+          "enum": [
+            15,
+            30,
+            60,
+            120,
+            240,
+            1440
+          ],
+          "type": "integer"
+        },
+        "callback_to_mode": {
+          "enum": [
+            "caller",
+            "custom"
+          ],
+          "type": "string"
+        },
         "context_last_n_messages": {
           "maximum": 100,
           "minimum": 1,
@@ -55066,6 +55152,11 @@
               "type": "null"
             }
           ]
+        },
+        "max_days_ahead": {
+          "maximum": 365,
+          "minimum": 1,
+          "type": "integer"
         },
         "max_digits": {
           "maximum": 32,
