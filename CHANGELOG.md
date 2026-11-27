@@ -1,5 +1,13 @@
 # Changelog
 
+## 2.8.14 — 2026-11-27
+
+- Guide agents through two built-in assistant tools that use a connected channel during a conversation:
+  - **Send WhatsApp template** (`send_whatsapp_template`): sends one approved template from a chosen sender to the caller's or chat's number or a fixed number. The assistant only fills the template variables, short and in written form (`28.11.2026, 10:00`, codes exactly as given). WhatsApp rejects a value spelled out the way it was spoken, and the assistant then retries once with written values.
+  - **Notify team** (`notify_team`): posts a short note into a Slack, Discord or Microsoft Teams channel or a Google Chat space. For Teams, paste the channel link; for Google Chat, pick a space the Chat app belongs to. Mentions such as `@channel`, `@here`, `@everyone`, `@all` and Teams mentions are never sent. A note informs the team; it does not hand the conversation over.
+- Both tools have their own cards under **Tools → Agent Connectors**: WhatsApp, Slack, Discord, Microsoft Teams and Google Chat. A card is locked when the plan does not include that channel.
+- The bundled catalogs are refreshed from the app on 27 November 2026 (601 MCP tools, 603 API operations), including the busy-line forwarding fields (`busy_forward`).
+
 ## 2.8.13 — 2026-11-26
 
 - See which campaign or ad brought a web widget conversation. The skill covers:
